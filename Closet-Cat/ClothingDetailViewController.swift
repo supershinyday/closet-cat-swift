@@ -14,12 +14,30 @@ UITableViewDelegate {
     @IBOutlet var tableView:UITableView!
     @IBAction func unwindToClothingDetail(segue:UIStoryboardSegue) {
     }
+
+    var clothItem:Clothing!
+    
+//    var name = ""
+//    var category = ""
+//    var image = ""
+//    var comments = ""
+//    
+//    var clothItem:[Clothing] = [
+//        Clothing(name: name, category: category, image: image, comments: comments)
+//    ]
+//    
+    
+    @IBOutlet var clothingImageView:UIImageView!
+    
+//    @IBOutlet var clothingNameLabel: UILabel!
+//    @IBOutlet var clothingCategoryLabel: UILabel!
+//    @IBOutlet var clothingCommentsLabel: UILabel!
     
     
-    var clothingItems: [Clothing] = [
-        Clothing(name: "Purple Shirt", category: "T-Shirt", image: "t-shirt-1", comments: "long comment to see if the text wraps around.")
+//    var clothingItems: [Clothing] = [
+//        Clothing(name: "Purple Shirt", category: "T-Shirt", image: "t-shirt-1", comments: "long comment to see if the text wraps around.") ]
     
-    ]
+
 
     override func viewDidLoad() {
         tableView.backgroundColor = UIColor(red: 255.0/255.0, green: 226.0/255.0, blue:
@@ -28,11 +46,17 @@ UITableViewDelegate {
         tableView.estimatedRowHeight = 36.0
         tableView.rowHeight = UITableViewAutomaticDimension
         
-        title = clothingItems[0].name
+        title = clothItem.name
         
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        clothingImageView.image = UIImage(named: clothItem.image)
+        
+//        clothingNameLabel.text = clothItem.name
+//        clothingCategoryLabel.text = clothItem.category
+//        clothingCommentsLabel.text = clothItem.comments
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,10 +95,10 @@ UITableViewDelegate {
         switch indexPath.row {
         case 0:
             cell.fieldLabel.text = "Name"
-            cell.valueLabel.text = clothingItems[0].name
+            cell.valueLabel.text = clothItem.name
         case 1:
             cell.fieldLabel.text = "Category"
-            cell.valueLabel.text = clothingItems[0].category
+            cell.valueLabel.text = clothItem.category
         case 2:
             cell.fieldLabel.text = "Date Last Worn"
             cell.valueLabel.text = ""
@@ -83,7 +107,7 @@ UITableViewDelegate {
             cell.valueLabel.text = ""
         case 4:
             cell.fieldLabel.text = "Comments"
-            cell.valueLabel.text = clothingItems[0].comments
+            cell.valueLabel.text = clothItem.comments
         default:
             cell.fieldLabel.text = ""
             cell.valueLabel.text = ""

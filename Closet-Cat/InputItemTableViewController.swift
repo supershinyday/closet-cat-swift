@@ -8,18 +8,19 @@
 
 import UIKit
 
-class InputItemTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class InputItemTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDataSource,UIPickerViewDelegate {
 
     
     @IBOutlet var imageView:UIImageView!
     
-    
-    
+    @IBOutlet weak var categoryPicker: UIPickerView!
 
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        categoryPicker.dataSource = self
+        categoryPicker.delegate = self
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -146,5 +147,23 @@ class InputItemTableViewController: UITableViewController, UIImagePickerControll
         // Pass the selected object to the new view controller.
     }
     */
+    
+    //MARK: - Delegates and data sources
+    //MARK: Data Sources
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return clothingCategories.count
+    }
+    
+    //MARK: Delegates
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return clothingCategories[row]
+    }
+    
+    //func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+      //  myLabel.text = pickerData[row]
+    }
 
-}
+

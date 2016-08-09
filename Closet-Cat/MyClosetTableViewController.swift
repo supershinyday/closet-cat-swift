@@ -10,7 +10,6 @@ import UIKit
 
 class MyClosetTableViewController: UITableViewController {
     
-    var clothingCategories = ["View All", "T-shirt", "Shirts", "Shorts", "Pants", "Skirts", "Dress"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +31,11 @@ class MyClosetTableViewController: UITableViewController {
         let barButton = UIBarButtonItem()
         barButton.customView = button
         self.navigationItem.leftBarButtonItem = barButton
+        
+        
+        // Remove the title of the back button
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Category", style:
+            .Plain, target: nil, action: nil)
     }
     
     func menuButtonPressed() {
@@ -127,4 +131,33 @@ class MyClosetTableViewController: UITableViewController {
     @IBAction func unwindToMyClosetScreen(segue:UIStoryboardSegue) {
     }
     
+    @IBAction func unwindToPrevScreen(segue:UIStoryboardSegue) {
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showCategory" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let destinationController = segue.destinationViewController as! MyClosetCollectionViewController
+                if clothingCategories[indexPath.row] == tShirt {
+                    destinationController.cloth = tshirtItems
+                } else if clothingCategories[indexPath.row] == shirts {
+                    destinationController.cloth = shirtItems
+                } else if clothingCategories[indexPath.row] == shorts {
+                    destinationController.cloth = shortsItems
+                } else if clothingCategories[indexPath.row] == pants {
+                    destinationController.cloth = pantsItems
+                } else if clothingCategories[indexPath.row] == skirts {
+                    destinationController.cloth = skirtItems
+                } else if clothingCategories[indexPath.row] == dress {
+                    destinationController.cloth = dressItems
+                }
+                
+            }
+        } }
+    
 }
+
+
+
+

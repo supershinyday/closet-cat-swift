@@ -12,17 +12,22 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    let lightPink = UIColor(red: 255.0/255.0, green: 226.0/255.0, blue: 225.0/255.0, alpha: 1.0)
+    let paleOrange = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 181.0/255.0, alpha: 1.0)
+    let skyBlue = UIColor(red: 221.0/255.0, green: 255.0/255.0, blue: 250.0/255.0, alpha: 1.0)
+    let lightBlue = UIColor(red: 204.0/255.0, green: 221.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+    let lightGreen = UIColor(red: 188.0/255.0, green: 255.0/255.0, blue: 185.0/255.0, alpha: 1.0)
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        UINavigationBar.appearance().barTintColor = UIColor(red: 242.0/255.0, green:
-            116.0/255.0, blue: 119.0/255.0, alpha: 1.0)
-        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        UINavigationBar.appearance().barTintColor = lightPink
+        UINavigationBar.appearance().tintColor = UIColor.blackColor()
         if let barFont = UIFont(name: "Avenir-Light", size: 24.0) {
             UINavigationBar.appearance().titleTextAttributes =
-                [NSForegroundColorAttributeName:UIColor.whiteColor(),
+                [NSForegroundColorAttributeName:UIColor.blackColor(),
                  NSFontAttributeName:barFont]
         }
         

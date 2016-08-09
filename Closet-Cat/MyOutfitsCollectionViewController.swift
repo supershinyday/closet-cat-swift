@@ -110,5 +110,11 @@ class MyOutfitsCollectionViewController: UICollectionViewController {
     
     }
     */
+    
+    @IBAction func unwindToMyOutfitsScreen(segue:UIStoryboardSegue) {
+    }
+    
+    @IBAction func unwindToPrevScreen(segue:UIStoryboardSegue) {
+    }
 
 }
