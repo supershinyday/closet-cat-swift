@@ -65,18 +65,27 @@ class NavigationTableViewController: UITableViewController {
             self.performSegueWithIdentifier("home", sender: self)
         } else if indexPath.row == 1 {
             self.performSegueWithIdentifier("inputNewItem", sender: self)
-        } //else if indexPath.row == 2 {
+        } else if indexPath.row == 2 {
+            showMessage()
             //self.performSegueWithIdentifier("showDetail2", sender: self) }
-         else if indexPath.row == 3 {
+        } else if indexPath.row == 3 {
             self.performSegueWithIdentifier("myCloset", sender: self)
         } else if indexPath.row == 4 {
             self.performSegueWithIdentifier("myOutfits", sender: self)
-        } //else if indexPath.row == 5 {
+        } else if indexPath.row == 5 {
+            showMessage()
             //self.performSegueWithIdentifier("showDetail2", sender: self) }
-        
+        }
     }
     
     
+
+    
+    func showMessage() {
+        let alertController = UIAlertController(title: "Sorry :(", message: "Service unavailable at this time", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
 
     /*
     // Override to support conditional editing of the table view.

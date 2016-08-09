@@ -36,6 +36,10 @@ class MyClosetTableViewController: UITableViewController {
         // Remove the title of the back button
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Category", style:
             .Plain, target: nil, action: nil)
+        
+        //lighter pink
+        view.backgroundColor = UIColor(red: 255.0/255.0, green: 251.0/255.0, blue: 251.0/255.0, alpha: 1.0)
+        tableView.backgroundColor = UIColor(red: 255.0/255.0, green: 251.0/255.0, blue: 251.0/255.0, alpha: 1.0)
     }
     
     func menuButtonPressed() {
@@ -68,6 +72,9 @@ class MyClosetTableViewController: UITableViewController {
         // Configure the cell...
         
         cell.textLabel?.text = clothingCategories[indexPath.row]
+        
+        
+        cell.backgroundColor = UIColor.clearColor()
 
 
         return cell

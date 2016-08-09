@@ -34,20 +34,10 @@ class MyClosetCollectionViewController: UICollectionViewController {
         
         
         // Do any additional setup after loading the view.
-//        if clothCat.category == tShirt {
-//            cloth = tshirtItems
-//        } else if clothCat.category == shirts {
-//            cloth = shirtItems
-//        } else if clothCat.category == shorts {
-//            cloth = shortsItems
-//        } else if clothCat.category == pants {
-//            cloth = pantsItems
-//        } else if clothCat.category == skirts {
-//            cloth = skirtItems
-//        } else if clothCat.category == dress {
-//            cloth = dressItems
-//        }
-//        
+        
+        //lighter pink
+        view.backgroundColor = UIColor(red: 255.0/255.0, green: 251.0/255.0, blue: 251.0/255.0, alpha: 1.0)
+        collectionView?.backgroundColor = UIColor(red: 255.0/255.0, green: 251.0/255.0, blue: 251.0/255.0, alpha: 1.0)
     }
     
 

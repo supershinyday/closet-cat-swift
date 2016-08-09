@@ -34,6 +34,10 @@ class MyOutfitsCollectionViewController: UICollectionViewController {
         let barButton = UIBarButtonItem()
         barButton.customView = button
         self.navigationItem.leftBarButtonItem = barButton
+        
+        //lighter pink
+        view.backgroundColor = UIColor(red: 255.0/255.0, green: 251.0/255.0, blue: 251.0/255.0, alpha: 1.0)
+        collectionView?.backgroundColor = UIColor(red: 255.0/255.0, green: 251.0/255.0, blue: 251.0/255.0, alpha: 1.0)
     }
     
     func menuButtonPressed() {

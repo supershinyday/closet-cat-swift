@@ -27,6 +27,11 @@ class InputItemTableViewController: UITableViewController, UIImagePickerControll
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        //lighter pink
+        view.backgroundColor = UIColor(red: 255.0/255.0, green: 251.0/255.0, blue: 251.0/255.0, alpha: 1.0)
+        tableView.backgroundColor = UIColor(red: 255.0/255.0, green: 251.0/255.0, blue: 251.0/255.0, alpha: 1.0)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,6 +82,26 @@ class InputItemTableViewController: UITableViewController, UIImagePickerControll
         dismissViewControllerAnimated(true, completion: nil)
     }
 
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        cell.backgroundColor = UIColor.clearColor()
+        
+        
+    }
+    
+    
+//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:
+//        NSIndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+//        
+//        cell.backgroundColor = UIColor.clearColor()
+//        
+//        return cell
+//    }
+
+    
+    
     // MARK: - Table view data source
 
     /*

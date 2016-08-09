@@ -14,6 +14,9 @@ class NewCategoryViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        //lighter pink
+        view.backgroundColor = UIColor(red: 255.0/255.0, green: 251.0/255.0, blue: 251.0/255.0, alpha: 1.0)
     }
 
     override func didReceiveMemoryWarning() {
