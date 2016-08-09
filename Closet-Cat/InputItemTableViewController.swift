@@ -42,17 +42,35 @@ class InputItemTableViewController: UITableViewController, UIImagePickerControll
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.row == 0 {
-            if UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary) {
-                let imagePicker = UIImagePickerController()
-                imagePicker.delegate = self
-                imagePicker.allowsEditing = false
-                imagePicker.sourceType = .PhotoLibrary
-                self.presentViewController(imagePicker, animated: true, completion:nil)
-            }
+            let alertController = UIAlertController(title: "Choose Method", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Take Photo", style: UIAlertActionStyle.Default) { (action: UIAlertAction) in self.takePic()})
+            alertController.addAction(UIAlertAction(title: "Choose From Library", style: UIAlertActionStyle.Default) { (action: UIAlertAction) in self.choosePic()})
+            self.presentViewController(alertController, animated: true, completion: nil)
         }
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
         }
     
+    
+    func choosePic() {
+        if UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.allowsEditing = false
+            imagePicker.sourceType = .PhotoLibrary
+            self.presentViewController(imagePicker, animated: true, completion:nil)
+        }
+    }
+    
+    func takePic() {
+        if UIImagePickerController.isSourceTypeAvailable(.Camera) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.allowsEditing = false
+            imagePicker.sourceType = .Camera
+            self.presentViewController(imagePicker, animated: true, completion:nil)
+        }
+    }
+
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         imageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
