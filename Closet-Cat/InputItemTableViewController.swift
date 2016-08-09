@@ -189,6 +189,15 @@ class InputItemTableViewController: UITableViewController, UIImagePickerControll
     
     //func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
       //  myLabel.text = pickerData[row]
+    
+    func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView?) -> UIView {
+        let pickerLabel = UILabel()
+        let titleData = clothingCategories[row]
+        let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Raleway-Regular", size: 18.0)!,NSForegroundColorAttributeName:UIColor.blackColor()])
+        pickerLabel.attributedText = myTitle
+        pickerLabel.textAlignment = .Center
+        return pickerLabel
+    }
     }
 
 

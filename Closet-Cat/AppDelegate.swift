@@ -25,11 +25,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UINavigationBar.appearance().barTintColor = lightPink
         UINavigationBar.appearance().tintColor = UIColor.blackColor()
-        if let barFont = UIFont(name: "Avenir-Light", size: 24.0) {
+        if let barFont = UIFont(name: "Raleway-Light", size: 24.0) {
             UINavigationBar.appearance().titleTextAttributes =
                 [NSForegroundColorAttributeName:UIColor.blackColor(),
                  NSFontAttributeName:barFont]
+            
         }
+        
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Raleway-Light", size: 18.0)!], forState: UIControlState.Normal)
         
         return true
     }

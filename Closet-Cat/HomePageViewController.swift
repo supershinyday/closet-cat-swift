@@ -10,6 +10,16 @@ import UIKit
 
 class HomePageViewController: UIViewController {
 
+    
+    @IBAction func showMessage() {
+        let alertController = UIAlertController(title: "Sorry :(", message: "Service unavailable at this time", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+
+
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
